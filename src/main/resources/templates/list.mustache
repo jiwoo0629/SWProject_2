@@ -1,0 +1,41 @@
+{{>layout/header}}
+
+    <div style="text-align: center;">
+        <h1>게시판 리스트</h1>
+    </div>
+    <div class="col-md-12">
+        <!-- 게시판 리스트 출력 -->
+        <table class="table table-horizontal table-bordered">
+            <thead class="thead-strong">
+            <tr>
+                <th>글번호</th>
+                <th>제목</th>
+                <th>작성일</th>
+                <th>조회수</th>
+            </tr>
+            </thead>
+            <tbody>
+                {{#post}}
+                    <tr>
+                        <td>{{id}}</td>
+                        <td><a href = "/board/view/{{id}}">{{title}}</a></td>
+                        <td>{{Modifieddate}}</td>
+                        <td>{{views}}</td>
+                    </tr>
+                {{/post}}
+            </tbody>
+        </table>
+    </div>
+
+    <div style= "text-align: center;">
+        {{#pageNum}}
+            <a href = "/board/list?page={{.}}">{{.}}</a>
+        {{/pageNum}}
+    </div>
+    <br><br><br><br>
+
+    <div style="text-align: center;">
+        <a href = "/board/write" role = button class = "btn btn-primary">게시글 작성</a>
+    </div>
+
+{{>layout/footer}}

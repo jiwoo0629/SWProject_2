@@ -1,0 +1,26 @@
+{{>layout/header}}
+
+<data type = "text" id = "id" value = "{{id}}"></data>
+
+{{#post}}
+    <div style="text-align: center;">
+        <span><h1>{{title}}</h1><br>조회수: {{views}}<br>생성일자: {{created_date}} </span>
+    </div>
+    <div class="form-group">
+        <table class = "table table-horizontal table-bordered" align = "center">
+            <thead class="thead-strong">
+                <tr width = "200" height = "50" align = "center">
+                    <th>{{content}}</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+{{/post}}
+
+<div style="text-align: center;">
+    <a href="/board/list" class="btn btn-success active" role="button">이전으로</a>
+    <a href="/board/modify/{{id}}" class="btn btn-success active" role="button">수정</a>
+    <button type="button" class="btn btn-primary" id="btn-delete">삭제</button>
+</div>
+
+{{>layout/footer}}
